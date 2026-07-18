@@ -1,36 +1,17 @@
-## Plan: Replace gallery placeholders with your 39 real photos
+## Batch 1 — 9 images received
 
-### Step 1 — Receive images
-You'll send the 39 photos in 4 chat batches (max 10 images per message). I can accept JPG, PNG, and WebP.
+Detected categories from image content:
+- **Campus**: WA0015-2 (building+lawn), WA0036 (kindergarten entrance)
+- **Labs**: WA0014 (library), WA0016 (physics lab), WA0017 (chem lab wide), WA0018 (chem lab prep), WA0028 (chem lab benches), WA0029 (workshop/tech lab), WA0031 (biology lab)
 
-### Step 2 — Upload to Lovable CDN
-For each image I will:
-- Copy it into the project
-- Run `lovable-assets create` to upload it to the Lovable CDN
-- Create a `.asset.json` pointer file
-- Import the CDN URLs into the gallery page
+### Steps for this batch
+1. Upload each of the 9 images via `lovable-assets create --file /mnt/user-uploads/<name> --filename <slug>.jpg > src/assets/gallery/<slug>.jpg.asset.json`. Naming: `campus-02`, `campus-03`, `lab-library-01`, `lab-physics-01`, `lab-chem-01/02/03`, `lab-tech-01`, `lab-bio-01`.
+2. Keep them staged — do **not** rewrite `src/routes/gallery.tsx` yet. I'll wire everything at once after all 39 images arrive so the gallery isn't half-real / half-placeholder mid-way.
+3. Reply confirming batch 1 is stored and ask for batch 2.
 
-This keeps the repo light and serves the images globally via CDN.
+### Open question still pending
+You haven't picked a categorization option yet. Based on what's arriving, I recommend **Option 1 (grouped by category)** keeping filters: Campus, Labs, Sports, Cultural, Events. Confirm or override in your next message.
 
-### Step 3 — Categorize
-The current gallery has 5 filters: **Campus, Sports, Cultural, Labs, Events**. Since 39 images does not divide evenly, choose one approach:
-
-1. **Send images in batches grouped by category** — I keep all 5 filters and assign each image to its category.
-2. **Auto-distribute into 5 categories** — I place 7-8 images per category based on filenames or the order you send them.
-3. **Single gallery, no filters** — Remove the filter bar and show all 39 images in one masonry grid.
-
-Please tell me which approach you prefer. If you have captions or descriptions for any images, include them with the batch.
-
-### Step 4 — Update the gallery code
-- Replace the 40 generated gradient tiles with the real image data
-- Update the `Tile` component to render `<img>` instead of a gradient background
-- Update the lightbox to show the full-resolution image
-- Keep the existing gold/royal hover overlays and captions
-- Add `alt` text from captions or filenames
-
-### Step 5 — Verify
-- Run the build
-- Check the gallery filters and lightbox work
-- Restart the dev server if needed
-
-Let me know which categorization option you prefer, then start uploading the first batch.
+### Technical notes
+- Assets go under `src/assets/gallery/` as `.asset.json` pointers only; no binaries stored in repo.
+- Final gallery wiring (after all batches): replace `items` array in `src/routes/gallery.tsx` with real image imports, swap gradient tiles for `<img>` with `loading="lazy"`, keep existing gold/royal hover + lightbox intact, add alt text per image.
