@@ -126,7 +126,7 @@ function Home() {
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/5 px-4 py-1.5 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[11px] uppercase tracking-[0.3em] text-gold-soft">Est. 2002 · CISCE Affiliated</span>
+              <span className="text-[11px] uppercase tracking-[0.3em] text-gold-soft">Est. 2018 · CISCE Affiliated</span>
             </div>
           </Reveal>
           <Reveal delay={120}>
