@@ -124,8 +124,18 @@
   0%   { transform: scale(1.08) translate3d(0, 0, 0); }
   100% { transform: scale(1.18) translate3d(-1.5%, -1.5%, 0); }
 }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
 
 @utility animate-float { animation: floatY 6s ease-in-out infinite; }
 @utility animate-reveal { animation: revealUp 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 @utility animate-fade { animation: fadeIn 0.6s ease-out both; }
 @utility animate-hero-kenburns { animation: heroKenburns 7s ease-out both; }
+@utility animate-slide-in-right { animation: slideInRight 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@utility animate-slide-in-left { animation: slideInLeft 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }

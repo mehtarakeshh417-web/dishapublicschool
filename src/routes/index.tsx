@@ -7,6 +7,8 @@ import heroImg2 from "@/assets/gallery/campus-03.jpg.asset.json";
 import heroImg3 from "@/assets/gallery/campus-06.jpg.asset.json";
 import heroImg4 from "@/assets/gallery/campus-08.jpg.asset.json";
 import heroImg5 from "@/assets/gallery/campus-09.jpg.asset.json";
+import directorImg from "@/assets/leadership/director-placeholder.jpg";
+import managerImg from "@/assets/leadership/manager-placeholder.jpg";
 
 const heroSlides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url, heroImg5.url];
 
@@ -115,6 +117,89 @@ function Testimonials() {
         <button aria-label="Next" onClick={() => setI((n) => (n + 1) % testimonials.length)} className="h-10 w-10 rounded-full border border-royal/10 grid place-items-center text-royal hover:bg-royal hover:text-white transition"><ChevronRight size={18} /></button>
       </div>
     </div>
+  );
+}
+
+const leadershipMessages = [
+  {
+    role: "Director",
+    name: "Satinder Pal Singh",
+    image: directorImg,
+    label: "A Message from Director",
+    quote: "At our school, we believe that education is a partnership between the school and parents. Together, we can nurture confident, responsible, and compassionate individuals through quality education, strong values, and holistic development.",
+    body: "Your encouragement, involvement, and trust inspire us to provide a safe, engaging, and enriching learning environment where every child can discover their true potential. Let us continue working together to build a bright future for our children.",
+  },
+  {
+    role: "Manager",
+    name: "Pimar Deep Kaur",
+    image: managerImg,
+    label: "A Message from Manager",
+    quote: "A child's growth is strongest when parents and teachers work together. Your support, guidance, and regular communication with the school play a vital role in shaping your child's academic success and personal development.",
+    body: "We remain committed to providing a caring, disciplined, and inspiring environment where every student can learn, grow, and excel. Together, let us create a strong foundation for our children's future.",
+  },
+];
+
+function LeadershipMessages() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((n) => (n + 1) % leadershipMessages.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+  const m = leadershipMessages[i];
+  return (
+    <section className="bg-slate-soft py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-5 items-center">
+          <Reveal className="lg:col-span-2">
+            <div className="relative mx-auto max-w-sm">
+              <div className="absolute -inset-4 bg-gold/10 rounded-3xl -rotate-2" />
+              <div key={i} className="relative aspect-[4/5] rounded-3xl bg-royal-gradient overflow-hidden shadow-luxe animate-slide-in-left">
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                />
+                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-royal to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold">{m.role}</div>
+                  <div className="font-serif text-xl mt-1">{m.name}</div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={150} className="lg:col-span-3">
+            <div key={i} className="animate-slide-in-right">
+              <div className="text-[11px] uppercase tracking-[0.35em] text-gold">{m.label}</div>
+              <blockquote className="mt-5 font-serif text-2xl md:text-3xl lg:text-4xl text-royal leading-snug">
+                "{m.quote}"
+              </blockquote>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                {m.body}
+              </p>
+              <div className="mt-8 flex items-center gap-6">
+                <div style={{ fontFamily: "'Cormorant Garamond', serif" }} className="italic text-3xl text-royal">{m.name}</div>
+                <div>
+                  <div className="text-sm font-medium text-royal">{m.role}</div>
+                  <div className="text-xs text-muted-foreground">Disha Public School</div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mt-12 flex items-center justify-center gap-4">
+          <button aria-label="Previous message" onClick={() => setI((n) => (n - 1 + leadershipMessages.length) % leadershipMessages.length)} className="h-10 w-10 rounded-full border border-royal/10 grid place-items-center text-royal hover:bg-royal hover:text-white transition"><ChevronLeft size={18} /></button>
+          <div className="flex gap-2">
+            {leadershipMessages.map((_, idx) => (
+              <button key={idx} onClick={() => setI(idx)} className={["h-1.5 rounded-full transition-all", idx === i ? "w-8 bg-gold" : "w-2 bg-royal/20"].join(" ")} aria-label={`Message ${idx + 1}`} />
+            ))}
+          </div>
+          <button aria-label="Next message" onClick={() => setI((n) => (n + 1) % leadershipMessages.length)} className="h-10 w-10 rounded-full border border-royal/10 grid place-items-center text-royal hover:bg-royal hover:text-white transition"><ChevronRight size={18} /></button>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -246,42 +331,8 @@ function Home() {
         </div>
       </section>
 
-      {/* PRINCIPAL */}
-      <section className="bg-slate-soft py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-5 items-center">
-          <Reveal className="lg:col-span-2">
-            <div className="relative mx-auto max-w-sm">
-              <div className="absolute -inset-4 bg-gold/10 rounded-3xl -rotate-2" />
-              <div className="relative aspect-[4/5] rounded-3xl bg-royal-gradient overflow-hidden shadow-luxe grid place-items-center">
-                <GraduationCap size={96} className="text-gold/70" />
-                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-royal to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold">Principal</div>
-                  <div className="font-serif text-xl mt-1">Dr. R. K. Sharma</div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={150} className="lg:col-span-3">
-            <div className="text-[11px] uppercase tracking-[0.35em] text-gold">A Message from the Principal</div>
-            <blockquote className="mt-5 font-serif text-3xl md:text-4xl text-royal leading-snug">
-              "Education, at Disha, is not the filling of a vessel — it is the kindling of a flame that will illuminate a lifetime."
-            </blockquote>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              For over two decades we have been privileged to walk beside young minds as they discover their purpose.
-              Our promise remains simple and enduring: to give every child the courage, competence and character
-              required to build a life of meaning.
-            </p>
-            <div className="mt-8 flex items-center gap-6">
-              <div style={{ fontFamily: "'Cormorant Garamond', serif" }} className="italic text-3xl text-royal">Dr. R. K. Sharma</div>
-              <div>
-                <div className="text-sm font-medium text-royal">Principal</div>
-                <div className="text-xs text-muted-foreground">Disha Public School</div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* LEADERSHIP MESSAGES */}
+      <LeadershipMessages />
 
       {/* TESTIMONIALS */}
       <section className="py-28">
