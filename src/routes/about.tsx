@@ -7,7 +7,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us — Disha Public School" },
-      { name: "description", content: "The journey, vision and leadership of Disha Public School, Ferozepur — a CISCE-affiliated institution shaping young minds since 2002." },
+      { name: "description", content: "The journey, vision and leadership of Disha Public School, Ferozepur — a CISCE-affiliated institution shaping young minds since 2018." },
       { property: "og:title", content: "About Us — Disha Public School" },
       { property: "og:description", content: "Journey, vision, mission and leadership of Disha Public School, Ferozepur." },
     ],
