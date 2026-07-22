@@ -43,29 +43,67 @@ function About() {
       />
 
       {/* JOURNEY / TIMELINE */}
-      <section className="mx-auto max-w-6xl px-6 lg:px-8 py-24">
-        <div className="max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.35em] text-gold">Our Journey</div>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl text-royal">Milestones that defined us.</h2>
+      <section className="relative overflow-hidden py-28 md:py-36">
+        <div className="absolute inset-0 pointer-events-none opacity-60">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
         </div>
-        <div className="relative mt-16">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent md:-translate-x-px" />
-          <div className="space-y-16">
-            {milestones.map((m, i) => (
-              <Reveal key={m.year} delay={i * 60}>
-                <div className={["relative flex flex-col md:flex-row md:items-center gap-6", i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"].join(" ")}>
-                  <div className="md:w-1/2 pl-14 md:pl-0 md:px-10">
-                    <div className={["rounded-2xl bg-white border border-royal/5 p-8 shadow-luxe", i % 2 === 0 ? "md:text-right" : "md:text-left"].join(" ")}>
-                      <div className="font-serif text-3xl text-gold">{m.year}</div>
-                      <div className="mt-2 font-serif text-2xl text-royal">{m.title}</div>
-                      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.body}</p>
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-gold">
+              <span className="h-px w-10 bg-gold/60" />
+              Our Journey
+              <span className="h-px w-10 bg-gold/60" />
+            </div>
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl text-royal">Milestones that defined us.</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">A quiet chronicle of vision, growth and excellence — from a single classroom to a flourishing institution.</p>
+          </div>
+
+          <div className="relative mt-20 md:mt-28">
+            {/* central glowing line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px md:-translate-x-px">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/30 to-transparent blur-sm" />
+            </div>
+
+            <div className="space-y-14 md:space-y-24">
+              {milestones.map((m, i) => {
+                const isLeft = i % 2 === 0;
+                return (
+                  <Reveal key={m.title} delay={i * 80}>
+                    <div className="relative flex flex-col md:flex-row md:items-center gap-8 md:gap-0">
+                      {/* card */}
+                      <div className={["md:w-1/2", isLeft ? "md:pr-16 md:text-right" : "md:order-2 md:pl-16 md:text-left"].join(" ")}>
+                        <div className={["group relative rounded-2xl bg-white border border-royal/5 p-8 md:p-10 shadow-luxe transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_-30px_rgba(11,37,69,0.45)] overflow-hidden", isLeft ? "md:rounded-br-[2.5rem]" : "md:rounded-bl-[2.5rem]"].join(" ")}>
+                          {/* gold accent bar */}
+                          <div className={["absolute top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-gold-soft to-gold", isLeft ? "right-0" : "left-0"].join(" ")} />
+                          {/* subtle gold corner glow */}
+                          <div className={["absolute -top-20 h-40 w-40 rounded-full bg-gold/10 blur-3xl transition-opacity duration-500 group-hover:opacity-70 opacity-40", isLeft ? "-right-20" : "-left-20"].join(" ")} />
+                          <div className="relative">
+                            <div className="inline-flex items-center gap-3">
+                              <span className="font-serif text-3xl md:text-4xl text-gradient-gold">{m.year}</span>
+                              <span className="hidden md:inline-block h-px w-10 bg-gold/40" />
+                            </div>
+                            <h3 className="mt-4 font-serif text-2xl md:text-3xl text-royal">{m.title}</h3>
+                            <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{m.body}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* timeline node */}
+                      <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-10">
+                        <div className="relative flex items-center justify-center h-10 w-10 rounded-full bg-white border border-gold/40 shadow-[0_0_30px_-5px_rgba(212,175,55,0.45)]">
+                          <div className="h-3.5 w-3.5 rounded-full bg-gold" />
+                          <div className="absolute inset-0 rounded-full border border-gold/30 animate-ping opacity-40" />
+                        </div>
+                      </div>
+
+                      {/* empty spacer for alternating layout */}
+                      <div className={["md:w-1/2", isLeft ? "md:order-2" : "md:order-1"].join(" ")} />
                     </div>
-                  </div>
-                  <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-4 w-4 rounded-full bg-royal ring-4 ring-gold/40" />
-                  <div className="md:w-1/2" />
-                </div>
-              </Reveal>
-            ))}
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
