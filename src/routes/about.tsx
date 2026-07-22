@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
-import { Eye, Target, Mail, Linkedin, Phone, Landmark, Compass, Sparkles, GraduationCap } from "lucide-react";
+import { Eye, Target, Mail, Linkedin, Phone } from "lucide-react";
+import heroBg from "@/assets/gallery/campus-02.jpg.asset.json";
+import directorImg from "@/assets/leadership/director-placeholder.jpg";
+import managerImg from "@/assets/leadership/manager-placeholder.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -17,20 +20,16 @@ export const Route = createFileRoute("/about")({
 
 const milestones = [
   { year: "2018", title: "The Founding Vision", body: "Disha Public School opens its doors in Ferozepur with a promise to redefine holistic education in Punjab." },
-  { year: "2019", title: "CISCE Affiliation", body: "Formal affiliation to CISCE, New Delhi (Affiliation No. PU248) — a milestone recognising academic rigor." },
+  { year: "2026", title: "CISCE Affiliation", body: "Formal affiliation to CISCE, New Delhi (Affiliation No. PU248) — a milestone recognising academic rigor." },
   { year: "2021", title: "Smart Labs & Library", body: "State-of-the-art computer-aided learning lab and expanded library inaugurated." },
   { year: "2023", title: "Senior Secondary Wing", body: "Expansion to Grade 12 marks a decisive step toward end-to-end learning journeys." },
-  { year: "2025", title: "A Growing Family", body: "Thousands of alumni now leading in medicine, engineering, defence, arts and enterprise." },
+  { year: "2026", title: "A Growing Family", body: "Thousands of alumni now leading in medicine, engineering, defence, arts and enterprise." },
   { year: "2026", title: "A New Chapter", body: "Continued investment in future-ready pedagogy, wellness and global exposure." },
 ];
 
 const leadership = [
-  { name: "Dr. R. K. Sharma", role: "Principal", bio: "PhD in Education. Two decades of academic leadership across CBSE & CISCE institutions." },
-  { name: "Mrs. Anita Malhotra", role: "Vice Principal — Academics", bio: "Curriculum architect. National-award educator championing inquiry-based learning." },
-  { name: "Mr. Harjinder Singh", role: "Dean of Student Affairs", bio: "Guides the student council, wellness programs and inter-school engagements." },
-  { name: "Dr. Simran Bhullar", role: "Head — Science Department", bio: "Advocate for hands-on STEM. Mentor of the school's award-winning robotics team." },
-  { name: "Mr. Rajesh Verma", role: "Head — Humanities", bio: "Historian and debate coach. Guides Model UN and public-speaking initiatives." },
-  { name: "Ms. Preeti Kaur", role: "Head — Fine & Performing Arts", bio: "Nurtures artistic voice across visual arts, music, theatre and dance." },
+  { name: "Satinder Pal Singh", role: "Director", image: directorImg, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
+  { name: "Pimar Deep Kaur", role: "Manager", image: managerImg, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
 ];
 
 function About() {
@@ -40,6 +39,7 @@ function About() {
         eyebrow="Our Story"
         title="A journey rooted in purpose."
         subtitle="From a single classroom in 2018 to a beloved institution shaping thousands of young lives — Disha's story is one of quiet, patient excellence."
+        bgImage={heroBg.url}
       />
 
       {/* JOURNEY / TIMELINE */}
@@ -80,8 +80,7 @@ function About() {
               <h3 className="mt-6 font-serif text-4xl">Our Vision</h3>
               <div className="mt-4 h-px w-16 bg-gold" />
               <p className="mt-6 leading-relaxed text-white/80">
-                To be the most respected school in the region — one where every graduate leaves rooted
-                in values, restless in curiosity, and ready to lead in a world we cannot yet see.
+                To be a leading institution that nurtures confident, compassionate, and responsible individuals through quality education, innovation, and strong moral values, empowering every child to excel in life and contribute positively to society.
               </p>
             </div>
           </Reveal>
@@ -92,9 +91,7 @@ function About() {
               <h3 className="mt-6 font-serif text-4xl text-royal">Our Mission</h3>
               <div className="mt-4 h-px w-16 bg-gold" />
               <p className="mt-6 leading-relaxed text-muted-foreground">
-                To deliver a rigorous CISCE curriculum enriched by inquiry, ethics and empathy —
-                supported by exceptional teachers, thoughtful facilities and an unwavering commitment
-                to each individual child.
+                To provide holistic, student-centered education that inspires excellence, creativity, lifelong learning, and strong ethical values in every child.
               </p>
             </div>
           </Reveal>
@@ -104,36 +101,30 @@ function About() {
       {/* LEADERSHIP */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-28">
         <div className="max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.35em] text-gold">Leadership & Faculty</div>
+          <div className="text-[11px] uppercase tracking-[0.35em] text-gold">Leadership</div>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl text-royal">The people behind the promise.</h2>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {leadership.map((p, i) => {
-            const icons = [Landmark, Compass, Sparkles, GraduationCap, Landmark, Sparkles];
-            const Ico = icons[i % icons.length];
-            return (
-              <Reveal key={p.name} delay={i * 60}>
-                <div className="group relative overflow-hidden rounded-2xl bg-white border border-royal/5 transition-all duration-500 hover:shadow-luxe hover:-translate-y-1">
-                  <div className="aspect-[5/4] bg-royal-gradient relative overflow-hidden">
-                    <div className="absolute inset-0 grid place-items-center text-gold/40">
-                      <Ico size={80} />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-x-6 bottom-6 flex gap-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                      <a href="#" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Linkedin size={15} /></a>
-                      <a href="mailto:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Mail size={15} /></a>
-                      <a href="tel:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Phone size={15} /></a>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="font-serif text-xl text-royal">{p.name}</div>
-                    <div className="text-[11px] uppercase tracking-[0.2em] text-gold mt-1">{p.role}</div>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 max-w-4xl">
+          {leadership.map((p, i) => (
+            <Reveal key={p.name} delay={i * 80}>
+              <div className="group relative overflow-hidden rounded-2xl bg-white border border-royal/5 transition-all duration-500 hover:shadow-luxe hover:-translate-y-1">
+                <div className="aspect-[5/4] relative overflow-hidden bg-royal-gradient">
+                  <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-royal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-x-6 bottom-6 flex gap-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <a href="#" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Linkedin size={15} /></a>
+                    <a href="mailto:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Mail size={15} /></a>
+                    <a href="tel:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Phone size={15} /></a>
                   </div>
                 </div>
-              </Reveal>
-            );
-          })}
+                <div className="p-6">
+                  <div className="font-serif text-xl text-royal">{p.name}</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-gold mt-1">{p.role}</div>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
     </>

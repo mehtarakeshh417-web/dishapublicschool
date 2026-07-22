@@ -1,6 +1,12 @@
-export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
+export function PageHeader({ eyebrow, title, subtitle, bgImage }: { eyebrow: string; title: string; subtitle?: string; bgImage?: string }) {
   return (
     <section className="relative overflow-hidden bg-royal-gradient text-white">
+      {bgImage && (
+        <>
+          <img src={bgImage} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-royal/70 via-royal/60 to-royal/85" />
+        </>
+      )}
       <div className="absolute inset-0 opacity-30" style={{
         backgroundImage: "radial-gradient(circle at 20% 20%, rgba(212,175,55,0.35), transparent 45%), radial-gradient(circle at 80% 60%, rgba(238,185,2,0.2), transparent 50%)",
       }} />
