@@ -18,7 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-white/70">
-            A CISCE-affiliated co-educational institution nurturing leaders since 2002.
+            A CISCE-affiliated co-educational institution nurturing leaders since 2018.
             Rooted in Ferozepur, Punjab — devoted to academic excellence, character and community.
           </p>
         </div>
