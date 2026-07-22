@@ -28,12 +28,8 @@ const milestones = [
 ];
 
 const leadership = [
-  { name: "Dr. R. K. Sharma", role: "Principal", bio: "PhD in Education. Two decades of academic leadership across CBSE & CISCE institutions." },
-  { name: "Mrs. Anita Malhotra", role: "Vice Principal — Academics", bio: "Curriculum architect. National-award educator championing inquiry-based learning." },
-  { name: "Mr. Harjinder Singh", role: "Dean of Student Affairs", bio: "Guides the student council, wellness programs and inter-school engagements." },
-  { name: "Dr. Simran Bhullar", role: "Head — Science Department", bio: "Advocate for hands-on STEM. Mentor of the school's award-winning robotics team." },
-  { name: "Mr. Rajesh Verma", role: "Head — Humanities", bio: "Historian and debate coach. Guides Model UN and public-speaking initiatives." },
-  { name: "Ms. Preeti Kaur", role: "Head — Fine & Performing Arts", bio: "Nurtures artistic voice across visual arts, music, theatre and dance." },
+  { name: "Satinder Pal Singh", role: "Director", image: directorImg, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
+  { name: "Pimar Deep Kaur", role: "Manager", image: managerImg, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
 ];
 
 function About() {
