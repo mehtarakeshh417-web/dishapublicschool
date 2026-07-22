@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
-import { Eye, Target, Mail, Linkedin, Phone, Landmark, Compass, Sparkles, GraduationCap } from "lucide-react";
+import { Eye, Target, Mail, Linkedin, Phone } from "lucide-react";
+import heroBg from "@/assets/gallery/campus-02.jpg.asset.json";
+import directorImg from "@/assets/leadership/director-placeholder.jpg";
+import managerImg from "@/assets/leadership/manager-placeholder.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
