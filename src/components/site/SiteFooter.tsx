@@ -42,7 +42,7 @@ export function SiteFooter() {
           <div className="font-serif text-lg text-gold-soft">Contact</div>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-2"><MapPin size={16} className="shrink-0 text-gold mt-0.5" /><span>Village Bagge Ke Pippal, PO Sherkhan, Ghall Khurd, Ferozepur, Punjab 152002</span></li>
-            <li className="flex gap-2"><Phone size={16} className="shrink-0 text-gold mt-0.5" /><a href="tel:+919646100047" className="hover:text-white">+91 96461 00047</a></li>
+            <li className="flex gap-2"><Phone size={16} className="shrink-0 text-gold mt-0.5" /><span className="flex flex-wrap gap-x-1"><a href="tel:+919646100047" className="hover:text-white">+91 96461 00047</a><span className="text-white/40">·</span><a href="tel:+917526842244" className="hover:text-white">+91 75268 42244</a></span></li>
             <li className="flex gap-2"><Mail size={16} className="shrink-0 text-gold mt-0.5" /><a href="mailto:disha0045272@gmail.com" className="hover:text-white break-all">disha0045272@gmail.com</a></li>
           </ul>
         </div>
