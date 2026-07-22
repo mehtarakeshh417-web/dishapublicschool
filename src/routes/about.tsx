@@ -38,8 +38,8 @@ function About() {
     <>
       <PageHeader
         eyebrow="Our Story"
-        title="A quarter century in the making."
-        subtitle="From a single classroom in 2002 to a beloved institution shaping thousands of young lives — Disha's story is one of quiet, patient excellence."
+        title="A journey rooted in purpose."
+        subtitle="From a single classroom in 2018 to a beloved institution shaping thousands of young lives — Disha's story is one of quiet, patient excellence."
       />
 
       {/* JOURNEY / TIMELINE */}
