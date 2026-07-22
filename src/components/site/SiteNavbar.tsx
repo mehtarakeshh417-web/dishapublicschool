@@ -41,7 +41,7 @@ export function SiteNavbar() {
             </div>
             <div className="hidden sm:flex flex-col leading-tight min-w-0">
               <span className="font-serif text-[17px] font-semibold text-royal truncate">Disha Public School</span>
-              <span className="text-[10px] tracking-[0.18em] uppercase text-gold font-medium">The Right Direction</span>
+              <span className="text-[10px] tracking-[0.18em] text-gold font-medium">The Right Direction to Education</span>
             </div>
           </Link>
 
