@@ -120,7 +120,12 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+@keyframes heroKenburns {
+  0%   { transform: scale(1.08) translate3d(0, 0, 0); }
+  100% { transform: scale(1.18) translate3d(-1.5%, -1.5%, 0); }
+}
 
 @utility animate-float { animation: floatY 6s ease-in-out infinite; }
 @utility animate-reveal { animation: revealUp 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 @utility animate-fade { animation: fadeIn 0.6s ease-out both; }
+@utility animate-hero-kenburns { animation: heroKenburns 7s ease-out both; }
