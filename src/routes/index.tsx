@@ -2,6 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play, Sparkles, Award, Users, GraduationCap, BookOpen, Trophy, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import heroImg1 from "@/assets/gallery/campus-02.jpg.asset.json";
+import heroImg2 from "@/assets/gallery/campus-03.jpg.asset.json";
+import heroImg3 from "@/assets/gallery/campus-06.jpg.asset.json";
+import heroImg4 from "@/assets/gallery/campus-08.jpg.asset.json";
+import heroImg5 from "@/assets/gallery/campus-09.jpg.asset.json";
+
+const heroSlides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url, heroImg5.url];
 
 export const Route = createFileRoute("/")({
   head: () => ({
