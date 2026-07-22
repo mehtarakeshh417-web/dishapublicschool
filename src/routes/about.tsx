@@ -80,8 +80,7 @@ function About() {
               <h3 className="mt-6 font-serif text-4xl">Our Vision</h3>
               <div className="mt-4 h-px w-16 bg-gold" />
               <p className="mt-6 leading-relaxed text-white/80">
-                To be the most respected school in the region — one where every graduate leaves rooted
-                in values, restless in curiosity, and ready to lead in a world we cannot yet see.
+                To be a leading institution that nurtures confident, compassionate, and responsible individuals through quality education, innovation, and strong moral values, empowering every child to excel in life and contribute positively to society.
               </p>
             </div>
           </Reveal>
@@ -92,9 +91,7 @@ function About() {
               <h3 className="mt-6 font-serif text-4xl text-royal">Our Mission</h3>
               <div className="mt-4 h-px w-16 bg-gold" />
               <p className="mt-6 leading-relaxed text-muted-foreground">
-                To deliver a rigorous CISCE curriculum enriched by inquiry, ethics and empathy —
-                supported by exceptional teachers, thoughtful facilities and an unwavering commitment
-                to each individual child.
+                To provide holistic, student-centered education that inspires excellence, creativity, lifelong learning, and strong ethical values in every child.
               </p>
             </div>
           </Reveal>
