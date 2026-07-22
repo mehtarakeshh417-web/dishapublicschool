@@ -119,15 +119,44 @@ function Testimonials() {
 }
 
 function Home() {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSlide((n) => (n + 1) % heroSlides.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-royal-gradient text-white">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-royal text-white">
+        {/* Carousel background */}
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-gold/20 blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-navy/60 blur-3xl" />
-          <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, rgba(238,185,2,0.10), transparent 50%), radial-gradient(circle at 70% 70%, rgba(19,64,116,0.6), transparent 55%)" }} />
+          {heroSlides.map((src, i) => (
+            <div
+              key={src}
+              aria-hidden={i !== slide}
+              className={[
+                "absolute inset-0 transition-opacity duration-[1600ms] ease-in-out",
+                i === slide ? "opacity-100" : "opacity-0",
+              ].join(" ")}
+            >
+              <img
+                src={src}
+                alt=""
+                className={[
+                  "h-full w-full object-cover will-change-transform",
+                  i === slide ? "animate-hero-kenburns" : "",
+                ].join(" ")}
+                loading={i === 0 ? "eager" : "lazy"}
+              />
+            </div>
+          ))}
+          {/* Luxe overlay for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-royal/85 via-royal/70 to-navy/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-royal/90 via-transparent to-royal/30" />
+          <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-gold/15 blur-3xl animate-float pointer-events-none" />
         </div>
+
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full py-24 md:py-32">
           <Reveal>
