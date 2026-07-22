@@ -167,7 +167,7 @@ function Home() {
             <StatBlock value={100} suffix="%" label="Success Rate" />
             <StatBlock value={25} suffix="+" label="Sports Laurels" />
             <StatBlock value={15} suffix=":1" label="Student · Teacher" />
-            <StatBlock value={22} suffix="+" label="Years of Legacy" />
+            <StatBlock value={8} suffix="+" label="Years of Legacy" />
           </div>
         </div>
       </section>
