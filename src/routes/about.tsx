@@ -101,36 +101,30 @@ function About() {
       {/* LEADERSHIP */}
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-28">
         <div className="max-w-2xl">
-          <div className="text-[11px] uppercase tracking-[0.35em] text-gold">Leadership & Faculty</div>
+          <div className="text-[11px] uppercase tracking-[0.35em] text-gold">Leadership</div>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl text-royal">The people behind the promise.</h2>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {leadership.map((p, i) => {
-            const icons = [Landmark, Compass, Sparkles, GraduationCap, Landmark, Sparkles];
-            const Ico = icons[i % icons.length];
-            return (
-              <Reveal key={p.name} delay={i * 60}>
-                <div className="group relative overflow-hidden rounded-2xl bg-white border border-royal/5 transition-all duration-500 hover:shadow-luxe hover:-translate-y-1">
-                  <div className="aspect-[5/4] bg-royal-gradient relative overflow-hidden">
-                    <div className="absolute inset-0 grid place-items-center text-gold/40">
-                      <Ico size={80} />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-x-6 bottom-6 flex gap-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                      <a href="#" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Linkedin size={15} /></a>
-                      <a href="mailto:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Mail size={15} /></a>
-                      <a href="tel:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Phone size={15} /></a>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="font-serif text-xl text-royal">{p.name}</div>
-                    <div className="text-[11px] uppercase tracking-[0.2em] text-gold mt-1">{p.role}</div>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 max-w-4xl">
+          {leadership.map((p, i) => (
+            <Reveal key={p.name} delay={i * 80}>
+              <div className="group relative overflow-hidden rounded-2xl bg-white border border-royal/5 transition-all duration-500 hover:shadow-luxe hover:-translate-y-1">
+                <div className="aspect-[5/4] relative overflow-hidden bg-royal-gradient">
+                  <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-royal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-x-6 bottom-6 flex gap-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <a href="#" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Linkedin size={15} /></a>
+                    <a href="mailto:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Mail size={15} /></a>
+                    <a href="tel:" className="h-9 w-9 rounded-full bg-white/10 backdrop-blur grid place-items-center text-white hover:bg-gold hover:text-royal"><Phone size={15} /></a>
                   </div>
                 </div>
-              </Reveal>
-            );
-          })}
+                <div className="p-6">
+                  <div className="font-serif text-xl text-royal">{p.name}</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-gold mt-1">{p.role}</div>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
     </>
