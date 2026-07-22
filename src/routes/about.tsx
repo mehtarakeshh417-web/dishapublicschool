@@ -23,7 +23,7 @@ const milestones = [
   { year: "2019", title: "CISCE Affiliation", body: "Formal affiliation to CISCE, New Delhi (Affiliation No. PU248) — a milestone recognising academic rigor." },
   { year: "2021", title: "Smart Labs & Library", body: "State-of-the-art computer-aided learning lab and expanded library inaugurated." },
   { year: "2023", title: "Senior Secondary Wing", body: "Expansion to Grade 12 marks a decisive step toward end-to-end learning journeys." },
-  { year: "2025", title: "A Growing Family", body: "Thousands of alumni now leading in medicine, engineering, defence, arts and enterprise." },
+  { year: "2026", title: "A Growing Family", body: "Thousands of alumni now leading in medicine, engineering, defence, arts and enterprise." },
   { year: "2026", title: "A New Chapter", body: "Continued investment in future-ready pedagogy, wellness and global exposure." },
 ];
 
