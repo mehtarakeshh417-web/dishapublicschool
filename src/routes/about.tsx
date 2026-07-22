@@ -20,7 +20,7 @@ export const Route = createFileRoute("/about")({
 
 const milestones = [
   { year: "2018", title: "The Founding Vision", body: "Disha Public School opens its doors in Ferozepur with a promise to redefine holistic education in Punjab." },
-  { year: "2019", title: "CISCE Affiliation", body: "Formal affiliation to CISCE, New Delhi (Affiliation No. PU248) — a milestone recognising academic rigor." },
+  { year: "2026", title: "CISCE Affiliation", body: "Formal affiliation to CISCE, New Delhi (Affiliation No. PU248) — a milestone recognising academic rigor." },
   { year: "2021", title: "Smart Labs & Library", body: "State-of-the-art computer-aided learning lab and expanded library inaugurated." },
   { year: "2023", title: "Senior Secondary Wing", body: "Expansion to Grade 12 marks a decisive step toward end-to-end learning journeys." },
   { year: "2026", title: "A Growing Family", body: "Thousands of alumni now leading in medicine, engineering, defence, arts and enterprise." },
