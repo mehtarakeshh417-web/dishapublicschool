@@ -39,6 +39,7 @@ function About() {
         eyebrow="Our Story"
         title="A journey rooted in purpose."
         subtitle="From a single classroom in 2018 to a beloved institution shaping thousands of young lives — Disha's story is one of quiet, patient excellence."
+        bgImage={heroBg.url}
       />
 
       {/* JOURNEY / TIMELINE */}
