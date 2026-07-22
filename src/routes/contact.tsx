@@ -96,7 +96,7 @@ function Contact() {
         <div className="lg:col-span-2 space-y-4">
           {[
             { icon: MapPin, title: "Campus", body: "Village Bagge Ke Pippal, PO Sherkhan, Ghall Khurd Block, Ferozepur, Punjab 152002" },
-            { icon: Phone, title: "Phone", body: "+91 96461 00047", href: "tel:+919646100047" },
+            { icon: Phone, title: "Phone", body: "+91 96461 00047  ·  +91 75268 42244", href: "tel:+919646100047" },
             { icon: Mail, title: "Email", body: "disha0045272@gmail.com", href: "mailto:disha0045272@gmail.com" },
             { icon: Clock, title: "Office Hours", body: "Mon–Sat · 8:00 AM to 3:30 PM" },
           ].map((c) => (
