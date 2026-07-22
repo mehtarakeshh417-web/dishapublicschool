@@ -7,9 +7,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Disha Public School — Nurturing Leaders, Inspiring Excellence" },
-      { name: "description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2002, Disha Public School has cultivated academic excellence, character and global citizenship." },
+      { name: "description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2018, Disha Public School has cultivated academic excellence, character and global citizenship." },
       { property: "og:title", content: "Disha Public School — Nurturing Leaders, Inspiring Excellence" },
-      { property: "og:description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2002, Disha Public School has cultivated academic excellence, character and global citizenship." },
+      { property: "og:description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2018, Disha Public School has cultivated academic excellence, character and global citizenship." },
     ],
   }),
   component: Home,
@@ -138,7 +138,7 @@ function Home() {
           <Reveal delay={240}>
             <p className="mt-8 max-w-2xl text-white/80 text-lg leading-relaxed">
               A distinguished co-educational institution in Ferozepur, Punjab, where academic rigor meets refined character —
-              guiding young minds toward purposeful global futures since 2002.
+              guiding young minds toward purposeful global futures since 2018.
             </p>
           </Reveal>
           <Reveal delay={360}>
