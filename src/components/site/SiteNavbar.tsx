@@ -35,10 +35,10 @@ export function SiteNavbar() {
       ].join(" ")}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-28 items-center justify-between gap-4">
+        <div className="flex h-20 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3 min-w-0 group">
-            <div className="h-24 w-24 shrink-0 rounded-full ring-1 ring-gold/40 bg-white grid place-items-center overflow-hidden shadow-sm">
-              <img src={logo.url} alt="Disha Public School logo" className="h-[88px] w-[88px] object-contain" />
+            <div className="h-12 w-12 shrink-0 rounded-full ring-1 ring-gold/40 bg-white grid place-items-center overflow-hidden shadow-sm">
+              <img src="https://res.cloudinary.com/dnqht9dkd/image/upload/v1784721230/disha_logo_xvzbhe.png" alt="Disha Public School logo" className="h-11 w-11 object-contain" />
             </div>
             <div className="hidden sm:flex flex-col leading-tight min-w-0">
               <span className="font-serif text-[17px] font-semibold text-royal truncate">Disha Public School</span>
