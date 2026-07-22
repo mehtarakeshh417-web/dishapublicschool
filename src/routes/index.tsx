@@ -246,42 +246,8 @@ function Home() {
         </div>
       </section>
 
-      {/* PRINCIPAL */}
-      <section className="bg-slate-soft py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-12 lg:grid-cols-5 items-center">
-          <Reveal className="lg:col-span-2">
-            <div className="relative mx-auto max-w-sm">
-              <div className="absolute -inset-4 bg-gold/10 rounded-3xl -rotate-2" />
-              <div className="relative aspect-[4/5] rounded-3xl bg-royal-gradient overflow-hidden shadow-luxe grid place-items-center">
-                <GraduationCap size={96} className="text-gold/70" />
-                <div className="absolute bottom-0 inset-x-0 h-1/3 bg-gradient-to-t from-royal to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold">Principal</div>
-                  <div className="font-serif text-xl mt-1">Dr. R. K. Sharma</div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={150} className="lg:col-span-3">
-            <div className="text-[11px] uppercase tracking-[0.35em] text-gold">A Message from the Principal</div>
-            <blockquote className="mt-5 font-serif text-3xl md:text-4xl text-royal leading-snug">
-              "Education, at Disha, is not the filling of a vessel — it is the kindling of a flame that will illuminate a lifetime."
-            </blockquote>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              For over two decades we have been privileged to walk beside young minds as they discover their purpose.
-              Our promise remains simple and enduring: to give every child the courage, competence and character
-              required to build a life of meaning.
-            </p>
-            <div className="mt-8 flex items-center gap-6">
-              <div style={{ fontFamily: "'Cormorant Garamond', serif" }} className="italic text-3xl text-royal">Dr. R. K. Sharma</div>
-              <div>
-                <div className="text-sm font-medium text-royal">Principal</div>
-                <div className="text-xs text-muted-foreground">Disha Public School</div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* LEADERSHIP MESSAGES */}
+      <LeadershipMessages />
 
       {/* TESTIMONIALS */}
       <section className="py-28">
