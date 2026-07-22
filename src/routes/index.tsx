@@ -190,6 +190,18 @@ function Home() {
           </Reveal>
         </div>
 
+        {/* Carousel dots */}
+        <div className="absolute bottom-8 right-6 md:right-10 flex items-center gap-2 z-10">
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setSlide(idx)}
+              aria-label={`Slide ${idx + 1}`}
+              className={["h-1.5 rounded-full transition-all", idx === slide ? "w-8 bg-gold" : "w-2 bg-white/40 hover:bg-white/70"].join(" ")}
+            />
+          ))}
+        </div>
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/50 text-[10px] uppercase tracking-[0.3em]">
           <span>Scroll</span>
           <div className="h-10 w-px bg-gradient-to-b from-gold to-transparent" />
