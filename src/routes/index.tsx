@@ -2,14 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play, Sparkles, Award, Users, GraduationCap, BookOpen, Trophy, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import heroImg1 from "@/assets/gallery/campus-02.jpg.asset.json";
+import heroImg2 from "@/assets/gallery/campus-03.jpg.asset.json";
+import heroImg3 from "@/assets/gallery/campus-06.jpg.asset.json";
+import heroImg4 from "@/assets/gallery/campus-08.jpg.asset.json";
+import heroImg5 from "@/assets/gallery/campus-09.jpg.asset.json";
+
+const heroSlides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url, heroImg5.url];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Disha Public School — Nurturing Leaders, Inspiring Excellence" },
-      { name: "description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2002, Disha Public School has cultivated academic excellence, character and global citizenship." },
+      { name: "description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2018, Disha Public School has cultivated academic excellence, character and global citizenship." },
       { property: "og:title", content: "Disha Public School — Nurturing Leaders, Inspiring Excellence" },
-      { property: "og:description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2002, Disha Public School has cultivated academic excellence, character and global citizenship." },
+      { property: "og:description", content: "A CISCE-affiliated senior secondary school in Ferozepur, Punjab. Since 2018, Disha Public School has cultivated academic excellence, character and global citizenship." },
     ],
   }),
   component: Home,
@@ -112,21 +119,50 @@ function Testimonials() {
 }
 
 function Home() {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSlide((n) => (n + 1) % heroSlides.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-royal-gradient text-white">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-royal text-white">
+        {/* Carousel background */}
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-gold/20 blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-navy/60 blur-3xl" />
-          <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, rgba(238,185,2,0.10), transparent 50%), radial-gradient(circle at 70% 70%, rgba(19,64,116,0.6), transparent 55%)" }} />
+          {heroSlides.map((src, i) => (
+            <div
+              key={src}
+              aria-hidden={i !== slide}
+              className={[
+                "absolute inset-0 transition-opacity duration-[1600ms] ease-in-out",
+                i === slide ? "opacity-100" : "opacity-0",
+              ].join(" ")}
+            >
+              <img
+                src={src}
+                alt=""
+                className={[
+                  "h-full w-full object-cover will-change-transform",
+                  i === slide ? "animate-hero-kenburns" : "",
+                ].join(" ")}
+                loading={i === 0 ? "eager" : "lazy"}
+              />
+            </div>
+          ))}
+          {/* Luxe overlay for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-royal/85 via-royal/70 to-navy/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-royal/90 via-transparent to-royal/30" />
+          <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-gold/15 blur-3xl animate-float pointer-events-none" />
         </div>
+
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full py-24 md:py-32">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/5 px-4 py-1.5 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-[11px] uppercase tracking-[0.3em] text-gold-soft">Est. 2002 · CISCE Affiliated</span>
+              <span className="text-[11px] uppercase tracking-[0.3em] text-gold-soft">Est. 2018 · CISCE Affiliated</span>
             </div>
           </Reveal>
           <Reveal delay={120}>
@@ -138,7 +174,7 @@ function Home() {
           <Reveal delay={240}>
             <p className="mt-8 max-w-2xl text-white/80 text-lg leading-relaxed">
               A distinguished co-educational institution in Ferozepur, Punjab, where academic rigor meets refined character —
-              guiding young minds toward purposeful global futures since 2002.
+              guiding young minds toward purposeful global futures since 2018.
             </p>
           </Reveal>
           <Reveal delay={360}>
@@ -154,6 +190,18 @@ function Home() {
           </Reveal>
         </div>
 
+        {/* Carousel dots */}
+        <div className="absolute bottom-8 right-6 md:right-10 flex items-center gap-2 z-10">
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setSlide(idx)}
+              aria-label={`Slide ${idx + 1}`}
+              className={["h-1.5 rounded-full transition-all", idx === slide ? "w-8 bg-gold" : "w-2 bg-white/40 hover:bg-white/70"].join(" ")}
+            />
+          ))}
+        </div>
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/50 text-[10px] uppercase tracking-[0.3em]">
           <span>Scroll</span>
           <div className="h-10 w-px bg-gradient-to-b from-gold to-transparent" />
@@ -167,7 +215,7 @@ function Home() {
             <StatBlock value={100} suffix="%" label="Success Rate" />
             <StatBlock value={25} suffix="+" label="Sports Laurels" />
             <StatBlock value={15} suffix=":1" label="Student · Teacher" />
-            <StatBlock value={22} suffix="+" label="Years of Legacy" />
+            <StatBlock value={8} suffix="+" label="Years of Legacy" />
           </div>
         </div>
       </section>

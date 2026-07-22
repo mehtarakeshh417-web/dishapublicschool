@@ -18,7 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-white/70">
-            A CISCE-affiliated co-educational institution nurturing leaders since 2002.
+            A CISCE-affiliated co-educational institution nurturing leaders since 2018.
             Rooted in Ferozepur, Punjab — devoted to academic excellence, character and community.
           </p>
         </div>
@@ -50,7 +50,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
           <div>© {new Date().getFullYear()} Disha Public School. All rights reserved.</div>
-          <div>Affiliated to CISCE (PU 248) New Delhi</div>
+          <div>Affiliated to CISCE New Delhi · Affiliation No. PU248</div>
         </div>
       </div>
     </footer>
