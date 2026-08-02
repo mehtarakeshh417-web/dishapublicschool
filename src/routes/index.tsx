@@ -124,7 +124,7 @@ const leadershipMessages = [
   {
     role: "Director",
     name: "Satinder Pal Singh",
-    image: directorImg,
+    image: directorImg.url,
     label: "A Message from Director",
     quote: "At our school, we believe that education is a partnership between the school and parents. Together, we can nurture confident, responsible, and compassionate individuals through quality education, strong values, and holistic development.",
     body: "Your encouragement, involvement, and trust inspire us to provide a safe, engaging, and enriching learning environment where every child can discover their true potential. Let us continue working together to build a bright future for our children.",

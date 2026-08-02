@@ -28,7 +28,7 @@ const milestones = [
 ];
 
 const leadership = [
-  { name: "Satinder Pal Singh", role: "Director", image: directorImg, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
+  { name: "Satinder Pal Singh", role: "Director", image: directorImg.url, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
   { name: "Pimar Deep Kaur", role: "Manager", image: managerImg, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
 ];
 
