@@ -7,7 +7,7 @@ import heroImg2 from "@/assets/gallery/campus-03.jpg.asset.json";
 import heroImg3 from "@/assets/gallery/campus-06.jpg.asset.json";
 import heroImg4 from "@/assets/gallery/campus-08.jpg.asset.json";
 import heroImg5 from "@/assets/gallery/campus-09.jpg.asset.json";
-import directorImg from "@/assets/leadership/director-placeholder.jpg";
+import directorImg from "@/assets/leadership/director-satinder-pal-singh.jpg.asset.json";
 import managerImg from "@/assets/leadership/manager-placeholder.jpg";
 
 const heroSlides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url, heroImg5.url];

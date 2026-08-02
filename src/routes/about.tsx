@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { Eye, Target, Mail, Linkedin, Phone } from "lucide-react";
 import heroBg from "@/assets/gallery/campus-02.jpg.asset.json";
-import directorImg from "@/assets/leadership/director-placeholder.jpg";
+import directorImg from "@/assets/leadership/director-satinder-pal-singh.jpg.asset.json";
 import managerImg from "@/assets/leadership/manager-placeholder.jpg";
 
 export const Route = createFileRoute("/about")({
