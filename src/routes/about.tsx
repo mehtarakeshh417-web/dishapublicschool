@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Reveal } from "@/components/site/Reveal";
@@ -28,8 +29,8 @@ const milestones = [
 ];
 
 const leadership = [
-  { name: "Satinder Pal Singh", role: "Director", image: directorImg.url, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
-  { name: "Pimar Deep Kaur", role: "Manager", image: managerImg.url, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
+  { name: "Satinder Pal Singh", role: "Director", image: asset(directorImg), bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
+  { name: "Pimar Deep Kaur", role: "Manager", image: asset(managerImg), bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
 ];
 
 function About() {
@@ -39,7 +40,7 @@ function About() {
         eyebrow="Our Story"
         title="A journey rooted in purpose."
         subtitle="From a single classroom in 2018 to a beloved institution shaping thousands of young lives — Disha's story is one of quiet, patient excellence."
-        bgImage={heroBg.url}
+        bgImage={asset(heroBg)}
       />
 
       {/* JOURNEY / TIMELINE */}

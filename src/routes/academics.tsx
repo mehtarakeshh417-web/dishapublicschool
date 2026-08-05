@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHeader } from "@/components/site/PageHeader";
@@ -42,9 +43,9 @@ export const Route = createFileRoute("/academics")({
         content: "Examination weightage, fees, timings, uniform, school rules and house system.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: campus02.url },
+      { property: "og:image", content: asset(campus02) },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: campus02.url },
+      { name: "twitter:image", content: asset(campus02) },
     ],
   }),
   component: Academics,
@@ -71,7 +72,7 @@ const feeRules = [
 const uniforms = {
   Summer: {
     icon: Sun,
-    image: campus07.url,
+    image: asset(campus07),
     rows: [
       {
         who: "Boys",
@@ -85,7 +86,7 @@ const uniforms = {
   },
   Winter: {
     icon: Snowflake,
-    image: campus03.url,
+    image: asset(campus03),
     rows: [
       {
         who: "Boys",
@@ -99,7 +100,7 @@ const uniforms = {
   },
   House: {
     icon: Trophy,
-    image: sports02.url,
+    image: asset(sports02),
     rows: [
       { who: "Boys", text: "House colour t-shirt, white pants, white socks, white fleet shoes, white turban." },
       { who: "Girls", text: "House colour t-shirt, white skirt, white socks, white fleet shoes, white ribbon." },
@@ -160,7 +161,7 @@ function Academics() {
         eyebrow="Academics"
         title="The School Handbook"
         subtitle="Everything that shapes a Disha day — the examination scheme, fee policy, timings, uniform, code of conduct and our four proud houses."
-        bgImage={labLibrary01.url}
+        bgImage={asset(labLibrary01)}
       />
 
       {/* Quick facts */}
@@ -198,7 +199,7 @@ function Academics() {
                   why regularity in work and performance matters so much.
                 </p>
                 <div className="mt-8 overflow-hidden rounded-2xl border border-royal/10">
-                  <img src={labChem01.url} alt="Students working in the science laboratory" loading="lazy" className="h-56 w-full object-cover" />
+                  <img src={asset(labChem01)} alt="Students working in the science laboratory" loading="lazy" className="h-56 w-full object-cover" />
                 </div>
               </div>
             </Reveal>
@@ -346,7 +347,7 @@ function Academics() {
 
       {/* House system */}
       <section className="relative overflow-hidden py-24 md:py-32">
-        <img src={campus09.url} alt="" className="absolute inset-0 h-full w-full object-cover opacity-10" />
+        <img src={asset(campus09)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-10" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
@@ -427,8 +428,8 @@ function Academics() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 grid gap-14 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <div className="grid grid-cols-2 gap-4">
-              <img src={events01.url} alt="Parents and teachers at a school gathering" loading="lazy" className="h-56 w-full rounded-2xl object-cover md:h-72" />
-              <img src={labPhysics01.url} alt="Student in the physics laboratory" loading="lazy" className="mt-8 h-56 w-full rounded-2xl object-cover md:h-72" />
+              <img src={asset(events01)} alt="Parents and teachers at a school gathering" loading="lazy" className="h-56 w-full rounded-2xl object-cover md:h-72" />
+              <img src={asset(labPhysics01)} alt="Student in the physics laboratory" loading="lazy" className="mt-8 h-56 w-full rounded-2xl object-cover md:h-72" />
             </div>
           </Reveal>
           <Reveal delay={120}>
