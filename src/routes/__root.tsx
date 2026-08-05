@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNavbar } from "@/components/site/SiteNavbar";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ResourceLimitOverlay } from "@/components/site/ResourceLimitOverlay";
 
 function NotFoundComponent() {
   return (
@@ -94,6 +95,8 @@ function RootComponent() {
         <SiteFooter />
       </div>
       <Toaster />
+      <ResourceLimitOverlay />
+
     </QueryClientProvider>
   );
 }
