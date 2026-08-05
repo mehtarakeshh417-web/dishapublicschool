@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play, Sparkles, Award, Users, GraduationCap, BookOpen, Trophy, ChevronLeft, ChevronRight, Quote } from "lucide-react";
@@ -10,7 +11,7 @@ import heroImg5 from "@/assets/gallery/campus-09.jpg.asset.json";
 import directorImg from "@/assets/leadership/director-satinder-pal-singh.jpg.asset.json";
 import managerImg from "@/assets/leadership/pimar-deep-kaur.jpg.asset.json";
 
-const heroSlides = [heroImg1.url, heroImg2.url, heroImg3.url, heroImg4.url, heroImg5.url];
+const heroSlides = [asset(heroImg1), asset(heroImg2), asset(heroImg3), asset(heroImg4), asset(heroImg5)];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -124,7 +125,7 @@ const leadershipMessages = [
   {
     role: "Director",
     name: "Satinder Pal Singh",
-    image: directorImg.url,
+    image: asset(directorImg),
     label: "A Message from Director",
     quote: "At our school, we believe that education is a partnership between the school and parents. Together, we can nurture confident, responsible, and compassionate individuals through quality education, strong values, and holistic development.",
     body: "Your encouragement, involvement, and trust inspire us to provide a safe, engaging, and enriching learning environment where every child can discover their true potential. Let us continue working together to build a bright future for our children.",
@@ -132,7 +133,7 @@ const leadershipMessages = [
   {
     role: "Manager",
     name: "Pimar Deep Kaur",
-    image: managerImg.url,
+    image: asset(managerImg),
     label: "A Message from Manager",
     quote: "A child's growth is strongest when parents and teachers work together. Your support, guidance, and regular communication with the school play a vital role in shaping your child's academic success and personal development.",
     body: "We remain committed to providing a caring, disciplined, and inspiring environment where every student can learn, grow, and excel. Together, let us create a strong foundation for our children's future.",

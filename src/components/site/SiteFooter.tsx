@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/disha-logo.asset.json";
@@ -10,7 +11,7 @@ export function SiteFooter() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <div className="h-14 w-14 rounded-full bg-white grid place-items-center overflow-hidden ring-1 ring-gold/40">
-              <img src={logo.url} alt="Disha Public School" className="h-12 w-12 object-contain" />
+              <img src={asset(logo)} alt="Disha Public School" className="h-12 w-12 object-contain" />
             </div>
             <div>
               <div className="font-serif text-xl text-white">Disha Public School</div>
