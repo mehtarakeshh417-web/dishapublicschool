@@ -149,7 +149,7 @@ function Contact() {
           <div className="rounded-3xl overflow-hidden border border-royal/5 shadow-luxe">
             <iframe
               title="Disha Public School — Ferozepur"
-              src="https://www.google.com/maps?q=Ghall+Khurd+Ferozepur+Punjab&output=embed"
+              src="https://www.google.com/maps?q=30.98058708268624,74.71465102166813&z=16&output=embed"
               className="w-full h-[420px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
