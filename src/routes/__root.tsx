@@ -95,6 +95,8 @@ function RootComponent() {
         <SiteFooter />
       </div>
       <Toaster />
+      <ResourceLimitOverlay />
+
     </QueryClientProvider>
   );
 }
