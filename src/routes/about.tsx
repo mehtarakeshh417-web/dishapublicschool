@@ -4,7 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Eye, Target, Mail, Linkedin, Phone } from "lucide-react";
 import heroBg from "@/assets/gallery/campus-02.jpg.asset.json";
 import directorImg from "@/assets/leadership/director-satinder-pal-singh.jpg.asset.json";
-import managerImg from "@/assets/leadership/manager-placeholder.jpg";
+import managerImg from "@/assets/leadership/pimar-deep-kaur.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -29,7 +29,7 @@ const milestones = [
 
 const leadership = [
   { name: "Satinder Pal Singh", role: "Director", image: directorImg.url, bio: "Champions a partnership between school and parents — nurturing confident, responsible, compassionate individuals through quality education and strong values." },
-  { name: "Pimar Deep Kaur", role: "Manager", image: managerImg, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
+  { name: "Pimar Deep Kaur", role: "Manager", image: managerImg.url, bio: "Believes a child's growth is strongest when parents and teachers work together — committed to a caring, disciplined and inspiring learning environment." },
 ];
 
 function About() {
